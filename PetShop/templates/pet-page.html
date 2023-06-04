@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Adopt a Pet</h1>
+<button onclick="location.href='/add'">Add a pet</button>
+{% for pet in pets %}
+    <div class="pet-box">
+        <h3>{{pet.name}}</h3>
+        <img src="{{pet.photo_url}}" alt="Picture of {{pet.name}} the {{pet.species}}.">
+        <span>
+            {% if pet.available == True %}
+                <strong id="avail">Available</strong>
+            {% else %}
+                <strong id="unavail">Unavailable</strong>
+            {% endif %}
+        </span>
+        <button onclick="location.href='/{{pet.id}}/details'" class="details-btn btn">"Learn more about me!"</button>
+    </div>
+{% endfor %}
+
+
+{% endblock %}
