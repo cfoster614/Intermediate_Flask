@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block content %}
+<table class='styled-table'>
+    <thead>
+        <tr class='header'>
+            <th>Picture</th>
+            <th>Flavor</th>
+            <th>Size</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cupcake in cupcakes %}
+        <tr data-id="{{cupcake.id}}">
+            <td><img src={{cupcake.image}} width="150px"></td>
+            <td>{{cupcake.flavor}}</td>
+            <td>{{cupcake.size}}</td>
+            <td>{{cupcake.rating}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="container">
+    <form method="post" name="cupcakes" class="styled-form">
+        <div class="form-flex">
+            <label for="flavor">Flavor:</label>
+            <input type="text" name="flavor" id="flavor-input">
+        </div>
+        <div class="form-flex">
+            <label for="size">Choose a size:</label>
+            <select name="size" id="size-input">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+        <div class="form-flex">
+            <label for="rating" id="range-input">Rating out of 10</label>
+            <input type="range" name="rating" min="0" max="10" id="rating-input">
+            <div class="range-label">5 stars</div>
+        </div>
+        <div class="form-flex">
+            <label for="image">Image Url:</label>
+            <input type="text" name="image" id="image-input">
+        </div>
+        <button>Add cupcake</button>
+        <input type="hidden" value="{{last_cupcake.id}}" id="hidden">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+body {
+    background-color: #fce8ec;
+    width: 100vw;
+    height: 100vh;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 40%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #e53453;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #f6bbc6;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #e53453;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 2%;
+    padding: 10%;
+    grid-template-rows: repeat(5, 6rem);
+    grid-template-columns: 20rem;
+    
+    
+}
+
+img {
+    width: 150px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #f6bbc6;
+    
+    padding: 20%;
+}
+
+.form-flex:nth-of-type(even) {
+    background-color: #f3f3f3;
+    
+    
+}
+
+.form-flex:last-of-type {
+    border-bottom: 2px solid #e53453;
+}
